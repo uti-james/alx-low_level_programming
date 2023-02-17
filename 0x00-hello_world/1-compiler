@@ -1,2 +1,2 @@
 #!/bini/bash
-gcc -c $MYFILE
+gcc -c $CFILE
