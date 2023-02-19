@@ -4,8 +4,9 @@
 /* more headers goes there */
 
 /**
- * main - Entry point
- * return success always (0)
+ * main - entry point
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
