@@ -7,9 +7,11 @@
 int main(void)
 {
 	int i;
+
 	for (i = 0; i < 16; i++)
 	{
-		if (i < 10) {
+		if (i < 10)
+		{
 			putchar(i + '0');
 		} else
 		{
@@ -17,5 +19,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	return 0;
+	return (0);
 }
