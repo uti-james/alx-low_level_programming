@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * mul - multilplies two ints
- * @a: processed date
- * @b: processed date
+ * mul - Multiplies two integers
  *
- * Returns: Always 0 (Success)
+ * @a: The first integer to be multiplied
+ * @b: The second integer to be multiplied
+ *
+ * Return: The result of multiplying a and b
  */
 int mul(int a, int b)
 {
