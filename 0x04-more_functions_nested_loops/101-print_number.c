@@ -1,31 +1,28 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_number - prints an integer
- * @n: the integer to print
- */
+  * print_number - Prints an integer.
+  * @n: The integer to prints.
+  *
+  * Return: Nothing!
+  */
 void print_number(int n)
 {
-	int digit, reversed = 0, num_digits = 0;
+	unsigned int i = n;
 
-	if (n < 0) {
+	if (n < 0)
+	{
+		n *= -1;
+		i = n;
 		_putchar('-');
-		n = -n;
 	}
 
-	/* calculate number of digits */
-	do {
-		num_digits++;
-		digit = n % 10;
-		reversed = reversed * 10 + digit;
-		n /= 10;
-	} while (n > 0);
+	i /= 10;
 
-	/* print digits in reversed order */
-	while (num_digits > 0) {
-		digit = reversed % 10;
-		_putchar(digit + '0');
-		reversed /= 10;
-		num_digits--;
-	}
+	if (i != 0)
+		print_number(i);
+
+	_putchar((unsigned int) n % 10 + '0');
+
 }
