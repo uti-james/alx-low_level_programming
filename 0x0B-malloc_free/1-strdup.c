@@ -4,9 +4,11 @@
 char *_strdup(char *str)
 {
 	char *arr;
-	int i;
+	int i, str_len = 0;
 
-	int str_len = 0;
+	if (str == NULL)
+		return (NULL);
+
 	while (str[str_len] != '\0')
 	{
 		str_len++;
