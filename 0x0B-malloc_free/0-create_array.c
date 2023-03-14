@@ -6,13 +6,19 @@ char *create_array(unsigned int size, char c){
 	unsigned int count;
 
 	if (size == 0)
+	{
 		return NULL;
+	}
 
 	ptrA = malloc(size * sizeof(char));
 	if (ptrA == NULL)
+	{
 		return NULL;
+	} else
+	{
 	for (count = 0; count < size; count++)
 		ptrA[count] = c;
+	}
 
 	return(ptrA);
 }
