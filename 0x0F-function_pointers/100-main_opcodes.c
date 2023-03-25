@@ -6,7 +6,7 @@
  * @argc: number of arguments passed to the program
  * @argv: array of arguments passed to the program
  *
- * Return: 0 if successful, 1 if incorrect number of 
+ * Return: 0 if successful, 1 if incorrect number of
  * arguments, 2 if negative number of bytes
  */
 
@@ -35,5 +35,5 @@ int main(int argc, char *argv[])
 	}
 	printf("%02hhx\n", *(main_ptr + i));
 
-	return 0;
+	return (0);
 }
