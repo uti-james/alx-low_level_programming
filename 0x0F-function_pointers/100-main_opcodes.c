@@ -13,27 +13,27 @@
 int main(int argc, char *argv[])
 {
 	int bytes, i;
-	char *main_ptr = (char *)main; // get the pointer to the beginning of main function
+	char *main_ptr = (char *)main;
 
-	if (argc != 2) // check if correct number of arguments is passed
+	if (argc != 2)
 	{
-		printf("Error\n"); // print error message
-		return 1; // return 1 to indicate error
+		printf("Error\n");
+		return (1);
 	}
 
-	bytes = atoi(argv[1]); // convert the argument to integer
+	bytes = atoi(argv[1]);
 
-	if (bytes < 0) // check if number of bytes is negative
+	if (bytes < 0)
 	{
-		printf("Error\n"); // print error message
-		return 2; // return 2 to indicate error
+		printf("Error\n");
+		return (2);
 	}
 
-	for (i = 0; i < bytes - 1; i++) // loop through the opcodes
+	for (i = 0; i < bytes - 1; i++)
 	{
-		printf("%02hhx ", *(main_ptr + i)); // print the opcode in hexadecimal format
+		printf("%02hhx ", *(main_ptr + i));
 	}
-	printf("%02hhx\n", *(main_ptr + i)); // print the last opcode and newline
+	printf("%02hhx\n", *(main_ptr + i));
 
-	return 0; // return 0 to indicate success
+	return 0;
 }
