@@ -3,35 +3,36 @@
 
 /**
  * main - prints the opcodes of its own main function
- * @argc: number of arguments passed to the program
- * @argv: array of arguments passed to the program
  *
- * Return: 0 if successful, 1 if incorrect number of arguments, 2 if negative number of bytes
+ * @argc: number of arguments passed to the program
+ * @argv: array of pointers to the arguments
+ *
+ * Return: 0 on success, 1 if the number of arguments is incorrect,
+ * or 2 if the number of bytes is negative.
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int bytes, i;
-	char *main_ptr = (char *)main; // get the pointer to the beginning of main function
+	int i, num_bytes;
 
-	if (argc != 2) // check if correct number of arguments is passed
+	if (argc != 2)
 	{
-		printf("Error\n"); // print error message
-		return 1; // return 1 to indicate error
+		printf("Error\n");
+		exit(1);
 	}
 
-	bytes = atoi(argv[1]); // convert the argument to integer
+	num_bytes = atoi(argv[1]);
 
-	if (bytes < 0) // check if number of bytes is negative
+	if (num_bytes < 0)
 	{
-		printf("Error\n"); // print error message
-		return 2; // return 2 to indicate error
+		printf("Error\n");
+		exit(2);
 	}
 
-	for (i = 0; i < bytes - 1; i++) // loop through the opcodes
-	{
-		printf("%02hhx ", *(main_ptr + i)); // print the opcode in hexadecimal format
-	}
-	printf("%02hhx\n", *(main_ptr + i)); // print the last opcode and newline
+	/* print the opcodes of main */
+	for (i = 0; i < num_bytes; i++)
+		printf("%02x ", ((unsigned char *)main)[i]);
 
-	return 0; // return 0 to indicate success
+	printf("\n");
+
+	return (0);
 }
